@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <div class="main w-full min-h-screen bg-zinc-900 text-white p-10">
+        <a href="/" class="text-blue-500 inline-block mb-10">Go Back To Home</a>
+        <form action="/editname" method="post">
+            <input type="text" placeholder="<%=pre%>" class="block mt-2 px-5 py-2 bg-zinc-800 rounded-md" name="previous" value="<%=pre%>">
+            <textarea  placeholder="newname" class="block mt-2 px-5 py-2 resize-none  bg-zinc-800 rounded-md" name="new"></textarea>
+            <input type="submit" class="px-5 py-2 bg-yellow-600 mt-[5px] ml-[5px]  border-[2px] rounded-md border-black cursor-pointer" value="update task">
+        </form>
+        
+    </div>
+</body>
+</html>

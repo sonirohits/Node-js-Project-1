@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <div class="main w-full min-h-screen bg-zinc-900 text-white">
+        <div class="form p-10">
+            <form action="/create" method="post">
+                <input type="text" placeholder="Title Goes Here" class="block mt-2 px-5 py-2 bg-zinc-800 rounded-md" name="name">
+                <textarea  placeholder="Write your task detail here" class="block mt-2 px-5 py-2 resize-none  bg-zinc-800 rounded-md" name="details"></textarea>
+                <input type="submit" class="px-5 py-2 bg-blue-600 mt-[5px] ml-[5px]  border-[2px] rounded-md border-black cursor-pointer" value="create task">
+            </form>
+        </div>
+        <div class="tasks p-10 flex">
+            <!-- <div class="task w-72 px-3 py-4 bg-zinc-800 rounded-md mr-[8px] hidden">
+                 <h1 class="text-white text-3xl tracking-tighter ">Some Task Goes Here</h1>
+                 <a href="" class="text-blue-600 inline-block mt-3">Read More</a>
+                 
+            </div>
+            <div class="task w-72 px-3 py-4 bg-zinc-800 rounded-md mr-[8px] hidden">
+                <h1 class="text-white text-3xl tracking-tighter ">Some Task Goes Here</h1>
+                <a href="" class="text-blue-600 inline-block mt-3">Read More</a>
+                
+           </div> -->
+           <% if(files.length >0){ %>
+                <% files.forEach(function(file){ %>
+                    <div class="task w-72 px-3 py-4 bg-zinc-800 rounded-md mr-[8px] ">
+                        <h1 class="text-white text-3xl tracking-tighter "><%= file %></h1>
+                        <a href="/file/<%=file%>" class="text-blue-600 inline-block mt-3 ">Read More</a>
+                        <a href="/edit/<%=file%>" class="text-blue-600 inline-block mt-3 ">Edit</a>
+                   </div> 
+                <% }) %>
+            <% } else { %>
+                <h1>No tasks yet</h1>
+            <% } %>
+
+          
+        </div>
+    </div>
+</body>
+</html>
